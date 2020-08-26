@@ -15,13 +15,10 @@ app.get("/repositories", (request, response) => {
 });
 
 app.post("/repositories", (request, response) => {
-  const {title, url, techs} = request.body;
+  const {title} = request.body;
   const project = {
     id:uuid(),
     title,
-    url,
-    techs,
-    likes: 0
   }
   repositories.push(project)
   return response.json(project)
